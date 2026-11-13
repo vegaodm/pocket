@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Vega Pocket Assistant</title>
+<meta name="description" content="Privacy policy for Vega Pocket Assistant: a local-first personal assistant for iPhone. Your records never leave the device.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --fg: #14161a;
+    --muted: #5b6472;
+    --bg: #ffffff;
+    --card: #f5f6f8;
+    --line: #e3e6ec;
+    --accent: #0b6bff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #eef1f6;
+      --muted: #a3adbd;
+      --bg: #0e1116;
+      --card: #171b22;
+      --line: #262c36;
+      --accent: #6aa8ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 40px 20px 80px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  header { margin-bottom: 32px; }
+  .badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0; }
+  h2 { font-size: 20px; margin: 36px 0 10px; letter-spacing: -0.01em; }
+  h3 { font-size: 16px; margin: 24px 0 6px; }
+  p, li { color: var(--fg); }
+  ul { padding-left: 20px; }
+  li { margin: 6px 0; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 20px 0;
+  }
+  .card p:first-child { margin-top: 0; }
+  .card p:last-child { margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 14px;
+  }
+  nav a { margin-right: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="badge">Privacy Policy</span>
+    <h1>Vega Pocket Assistant</h1>
+    <p class="sub">Effective 15 November 2026 · Applies to the iOS app “Vega Pocket Assistant” (bundle ID <code>com.vega.personalassistant.app</code>)</p>
+    <nav class="sub" style="margin-top:14px">
+      <a href="./support.html">Support</a>
+      <a href="mailto:vegaodm@outlook.com">Contact</a>
+    </nav>
+  </header>
+
+  <div class="card">
+    <p><strong>The short version.</strong> Pocket Assistant keeps everything on your
+    iPhone. There is no account, no server, no analytics and no advertising. Your
+    messages are handed to the Pocket LLM app on the same device for generation, and
+    the replies are stored in a local database that only you can open.</p>
+  </div>
+
+  <h2>1. What the app stores on your device</h2>
+  <ul>
+    <li><strong>Records</strong> you create or that are extracted from a reply: tasks,
+        notes, expenses, events, people and ideas, including titles, text, amounts,
+        dates, tags and the record's status.</li>
+    <li><strong>Conversation history</strong>: your message and the assistant's reply,
+        so the chat can be shown again after a restart.</li>
+    <li><strong>Small settings</strong>: the selected assistant provider, pending
+        request identifiers, and whether the one-time unlock was purchased.</li>
+    <li><strong>Share container files</strong>: short-lived JSON files used to hand a
+        request to Pocket LLM and to receive its reply. They are deleted as soon as
+        they are consumed, and any leftover is removed after 24 hours.</li>
+  </ul>
+  <p>All of this lives inside the app's own container (and the shared App Group
+  container described below). It is protected by iOS Data Protection and cannot be
+  read while the device is locked.</p>
+
+  <h2>2. What leaves your device</h2>
+  <table>
+    <tr><th>Path</th><th>Data</th><th>Destination</th></tr>
+    <tr>
+      <td>Assistant request</td>
+      <td>Your message plus a fixed instruction describing the record format</td>
+      <td>The Pocket LLM app on the same iPhone, through a shared App Group folder</td>
+    </tr>
+    <tr>
+      <td>Assistant reply</td>
+      <td>Generated text and the optional record block</td>
+      <td>Back from Pocket LLM to Pocket Assistant through the same folder</td>
+    </tr>
+    <tr>
+      <td>Purchase</td>
+      <td>Apple's transaction information</td>
+      <td>Apple, through StoreKit</td>
+    </tr>
+  </table>
+  <p>Nothing is uploaded to us. We operate no server, no database and no logging
+  service for app content. If you use a build of Pocket LLM that downloads models
+  from the internet, that download is handled by Pocket LLM and is outside this
+  policy.</p>
+
+  <h2>3. What we never do</h2>
+  <ul>
+    <li>No analytics, telemetry, crash-reporting SDKs or advertising SDKs.</li>
+    <li>No account, sign-in, email capture or contact upload.</li>
+    <li>No access to your photos, contacts, calendar, location, microphone or
+        health data. The app does not request those permissions.</li>
+    <li>No tracking across apps or websites, and therefore no App Tracking
+        Transparency prompt.</li>
+    <li>No sale or sharing of personal information with third parties.</li>
+  </ul>
+
+  <h2>4. Diagnostics and logging</h2>
+  <p>Release builds log only technical identifiers such as a request ID, a status
+  word and timings. They never log your message text, reply text, record contents or
+  amounts to the system log. Debug builds, which are only used during development,
+  can show request and reply details on screen and in the log.</p>
+
+  <h2>5. Purchases</h2>
+  <p>Pocket Assistant offers one optional non-consumable purchase that removes the
+  record limit. Payment is processed entirely by Apple. The app only stores a local
+  flag indicating whether the purchase is active, derived from
+  <code>StoreKit</code>'s current entitlements. We never see your payment method or
+  billing details.</p>
+
+  <h2>6. Retention and deletion</h2>
+  <ul>
+    <li>Records stay until you delete them. Deleted records are marked deleted and
+        are removed permanently when the database is compacted or when you erase all
+        data.</li>
+    <li><strong>Erase all data</strong> in Settings removes every record, every
+        message and every pending request from the device immediately.</li>
+    <li>Deleting the app removes its container, including the local database.</li>
+    <li>Shared request and reply files are deleted after consumption, with a 24-hour
+        backstop for leftovers.</li>
+  </ul>
+
+  <h2>7. Children</h2>
+  <p>The app is not directed at children and does not knowingly collect information
+  from anyone, because it does not collect information at all.</p>
+
+  <h2>8. Your rights</h2>
+  <p>Because the app transfers no personal data to us, there is nothing for us to
+  export, correct or erase on our side. You control all app data directly on your
+  device through the records list and Settings → Erase all data. If you have a
+  question about this policy, write to the address below.</p>
+
+  <h2>9. Changes</h2>
+  <p>If a future version starts sending data off the device — for example an optional
+  cloud provider — this policy will be updated before that version is released, and
+  the change will be visible in the app and on this page.</p>
+
+  <h2>10. Contact</h2>
+  <p>Questions about privacy: <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
+
+  <footer>
+    <nav><a href="./index.html">Privacy</a><a href="./support.html">Support</a></nav>
+    <p>© 2026 Vega. Pocket Assistant does not include a language model; it works with
+    the Pocket LLM app installed on the same iPhone.</p>
+  </footer>
+</main>
+</body>
+</html>
