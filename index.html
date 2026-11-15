@@ -83,7 +83,7 @@
   <header>
     <span class="badge">Privacy Policy</span>
     <h1>Vega Pocket Assistant</h1>
-    <p class="sub">Effective 15 November 2026 · Applies to the iOS app “Vega Pocket Assistant”</p>
+    <p class="sub">Effective 15 November 2026 · Updated for 1.1 (dictation) · Applies to the iOS app “Vega Pocket Assistant”</p>
     <nav class="sub" style="margin-top:14px">
       <a href="./support.html">Support</a>
       <a href="mailto:vegaodm@outlook.com">Contact</a>
@@ -132,13 +132,42 @@
       <td>Apple's transaction information</td>
       <td>Apple, through StoreKit</td>
     </tr>
+    <tr>
+      <td>Speech model download (once, optional)</td>
+      <td>A file request for the Whisper model. No audio and no text.</td>
+      <td>Hugging Face (or its mirror), through the model repository used by WhisperKit</td>
+    </tr>
+    <tr>
+      <td>Dictation with Apple Speech (only if you choose it)</td>
+      <td>Your recorded audio, handled by iOS speech recognition</td>
+      <td>Apple, under Apple's speech recognition terms; the app receives only the transcript</td>
+    </tr>
   </table>
   <p>Nothing is uploaded to us. We operate no server, no database and no logging
   service for app content. If you use a build of Pocket LLM that downloads models
   from the internet, that download is handled by Pocket LLM and is outside this
   policy.</p>
 
-  <h2>3. What we never do</h2>
+  <h2>3. Dictation (optional)</h2>
+  <p>Voice input is optional and off until you press the microphone. Two engines can provide it,
+  chosen in Settings → Voice input:</p>
+  <ul>
+    <li><strong>Whisper (default).</strong> Audio is transcribed on this iPhone by a model
+        downloaded once; the recording is discarded afterwards. Nothing is written to disk and
+        nothing is sent to Pocket LLM — only the text you approve in the message field is sent.
+        The model download (Hugging Face or its mirror when that host is unreachable) contains no
+        personal data, no audio and no text, and the model can be deleted at any time.</li>
+    <li><strong>Apple Speech.</strong> If you choose the system recogniser instead, the audio is
+        processed by iOS speech recognition. Apple's privacy terms apply to that processing, and
+        it may use network data. We receive nothing either way; the app only gets the transcript
+        it puts in the message field.</li>
+  </ul>
+  <p><strong>Microphone permission</strong> is requested when you first press the microphone, and
+  <strong>speech recognition permission</strong> when Apple Speech is used. Both can be revoked
+  in iOS Settings; dictation then stops working and nothing else changes.</p>
+  <p><strong>No audio is ever stored, shared or used for training by this app.</strong></p>
+
+  <h2>4. What we never do</h2>
   <ul>
     <li>No analytics, telemetry, crash-reporting SDKs or advertising SDKs.</li>
     <li>No account, sign-in, email capture or contact upload.</li>
@@ -149,20 +178,20 @@
     <li>No sale or sharing of personal information with third parties.</li>
   </ul>
 
-  <h2>4. Diagnostics and logging</h2>
+  <h2>5. Diagnostics and logging</h2>
   <p>Release builds log only technical identifiers such as a request ID, a status
   word and timings. They never log your message text, reply text, record contents or
   amounts to the system log. Debug builds, which are only used during development,
   can show request and reply details on screen and in the log.</p>
 
-  <h2>5. Purchases</h2>
+  <h2>6. Purchases</h2>
   <p>Pocket Assistant offers one optional non-consumable purchase that removes the
   record limit. Payment is processed entirely by Apple. The app only stores a local
   flag indicating whether the purchase is active, derived from
   <code>StoreKit</code>'s current entitlements. We never see your payment method or
   billing details.</p>
 
-  <h2>6. Retention and deletion</h2>
+  <h2>7. Retention and deletion</h2>
   <ul>
     <li>Records stay until you delete them. Deleted records are marked deleted and
         are removed permanently when the database is compacted or when you erase all
@@ -174,22 +203,22 @@
         backstop for leftovers.</li>
   </ul>
 
-  <h2>7. Children</h2>
+  <h2>8. Children</h2>
   <p>The app is not directed at children and does not knowingly collect information
   from anyone, because it does not collect information at all.</p>
 
-  <h2>8. Your rights</h2>
+  <h2>9. Your rights</h2>
   <p>Because the app transfers no personal data to us, there is nothing for us to
   export, correct or erase on our side. You control all app data directly on your
   device through the records list and Settings → Erase all data. If you have a
   question about this policy, write to the address below.</p>
 
-  <h2>9. Changes</h2>
+  <h2>10. Changes</h2>
   <p>If a future version starts sending data off the device — for example an optional
   cloud provider — this policy will be updated before that version is released, and
   the change will be visible in the app and on this page.</p>
 
-  <h2>10. Contact</h2>
+  <h2>11. Contact</h2>
   <p>Questions about privacy: <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
 
   <footer>

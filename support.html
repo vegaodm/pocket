@@ -97,7 +97,7 @@
   <header>
     <span class="badge">Support</span>
     <h1>Vega Pocket Assistant</h1>
-    <p class="sub">A local-first personal assistant for iPhone. Everything is stored on your device.</p>
+    <p class="sub">A local-first personal assistant for iPhone. Type or dictate a message; everything is stored on your device.</p>
     <nav class="sub" style="margin-top:14px">
       <a href="./index.html">Privacy policy</a>
       <a href="mailto:vegaodm@outlook.com">Contact</a>
@@ -186,6 +186,67 @@
     the topic is niche: “如果不确定就写明”.</p>
     <p>A paragraph that mixes a meeting, a person and an expense is harder for a
     small model and produces rougher records.</p>
+  </details>
+
+  <h2>Dictation</h2>
+  <details open>
+    <summary>How do I dictate instead of typing?</summary>
+    <p>Press and hold the microphone to the left of the message field, speak, then release. The
+    text appears in the field — edit it if you like, then tap send. Nothing is sent until you do:
+    dictation only fills the composer.</p>
+  </details>
+  <details>
+    <summary>Which transcription should I choose?</summary>
+    <p>Settings → Voice input offers two options:</p>
+    <ul>
+      <li><strong>Whisper tiny.en</strong> — a model downloaded once (about 40&nbsp;MB). Transcription
+      then runs entirely on the iPhone, including in airplane mode. Audio is never uploaded and
+      never stored. This is the private default.</li>
+      <li><strong>Apple Speech</strong> — the recogniser built into iOS. Nothing to download, but
+      Apple's speech services are involved: their privacy terms apply and recognition may use
+      network data. Pick this if you would rather not download a model.</li>
+    </ul>
+    <p>You can switch at any time; the model you downloaded stays until you delete it.</p>
+  </details>
+  <details>
+    <summary>Why did it ask to download something?</summary>
+    <p>Whisper is an on-device model, so the first dictation needs it locally. The prompt offers
+    three choices: download Whisper (about 40&nbsp;MB), use Apple Speech instead, or cancel. If the
+    main model host is unreachable the app switches to a mirror automatically, and the download
+    can be resumed from Settings → Voice input.</p>
+  </details>
+  <details>
+    <summary>Does dictation need the internet?</summary>
+    <p>Whisper: only for that first download. Apple Speech: no download, but Apple's recogniser
+    may use network data under their terms.</p>
+  </details>
+  <details>
+    <summary>Is my voice uploaded anywhere?</summary>
+    <p>With Whisper: no. Audio is transcribed on the device and discarded — never stored, never
+    sent to Pocket LLM, never used for training. With Apple Speech, the audio is handled by
+    iOS speech recognition, which is governed by Apple's terms rather than ours.</p>
+  </details>
+  <details>
+    <summary>The microphone button is greyed out</summary>
+    <p>Apple Speech may be unavailable for your region or locale, and Whisper needs its model.
+    Open Settings → Voice input: download the model, or switch the option. The keyboard always
+    works.</p>
+  </details>
+  <details>
+    <summary>Dictation stopped after a second or two</summary>
+    <p>Recording ends automatically after about 1.2&nbsp;seconds of silence, and stops at 60
+    seconds. Speak in one go, or press again for another sentence — the new text is appended to
+    what you already have.</p>
+  </details>
+  <details>
+    <summary>It misheard a word</summary>
+    <p>Fix it in the field before sending — that is exactly why the transcript is editable.
+    Short, single-topic sentences transcribe best, which also makes the records cleaner.</p>
+  </details>
+  <details>
+    <summary>Which languages can I dictate?</summary>
+    <p>English in this version. Typed input can be any language; the records keep whatever
+    language you wrote in.</p>
   </details>
 
   <h2>Common questions</h2>
