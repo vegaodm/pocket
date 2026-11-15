@@ -191,10 +191,9 @@
   are scheduled at a time, soonest first. The list of scheduled reminders is stored on
   the device with the records themselves, and turning notifications off in iOS Settings
   stops them without affecting anything else.</p>
-  <p>Home Screen and Lock Screen widgets (<em>Quick Ask</em>, <em>Records</em>,
-  <em>Search</em>) read the same local database through the app's own code. They show
-  only titles and dates, keep nothing of their own, and cannot open the database to any
-  other app or to the widget extension's own storage.</p>
+  <p>Home Screen widgets (<em>Quick Ask</em>, <em>Records</em>, <em>Search</em>) read the
+  same local database through the app's own code. They show only titles and dates, keep
+  no copy of their own, and cannot open the database to another app.</p>
 
   <h2>6. Diagnostics and logging</h2>
   <p>Release builds log only technical identifiers such as a request ID, a status
@@ -213,7 +212,8 @@
   <ul>
     <li>Records stay until you delete them. <strong>Archive</strong> moves a record out
         of the list without deleting it; <strong>Delete</strong> moves it to the Deleted
-        view, where you can restore it or delete it for good.</li>
+        view, where you can restore it or remove it permanently with
+        <em>Delete forever</em>.</li>
     <li><strong>Delete All Records</strong> in the Records menu and
         <strong>Erase all data</strong> in Settings both remove records from the device
         immediately and cannot be undone.</li>
