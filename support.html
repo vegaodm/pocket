@@ -108,26 +108,39 @@
     <p><strong>Need help?</strong> Email
     <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a> and include your iOS
     version, the app version (Settings → About) and, if a reply failed, whether
-    Pocket LLM had a model loaded. We usually answer within two business days.</p>
+    the companion app had a model loaded. We usually answer within two business days.</p>
     <a class="cta" href="mailto:vegaodm@outlook.com?subject=Pocket%20Assistant%20support">Email support</a>
   </div>
 
   <h2>Getting started</h2>
   <details open>
     <summary>Do I need another app?</summary>
-    <p>Yes. Pocket Assistant does not include a language model. Install
-    <strong>Pocket LLM Chat</strong> on the same iPhone and load a model there. In
-    Pocket Assistant, open Settings → Assistant provider and pick “Pocket LLM Chat”.
-    Both apps must be signed by the same developer so they can share the hand-off
-    folder.</p>
+    <p>Yes. Pocket Assistant does not include a language model. Install one of our two
+    companion apps on the same iPhone and load a model there:</p>
+    <ul>
+      <li><strong>Pocket LLM Chat</strong> — choose between LFM3 1.7B (about 1.0&nbsp;GB,
+          recommended) and Bonsai 2B (about 1.2&nbsp;GB).</li>
+      <li><strong>Pocket LLMG</strong> — Gemma 4 E2B Instruct (text-only, 4-bit, about
+          2.5&nbsp;GiB); it ships this one model.</li>
+    </ul>
+    <p>Then in Pocket Assistant open Settings → Assistant provider and pick the app you
+    installed. Both apps must be signed by the same developer so they can share the
+    hand-off folder. Only one is needed; you can switch between them at any time.</p>
   </details>
   <details>
     <summary>Which model should I use?</summary>
-    <p><strong>LFM3 1.7B</strong> is the recommended model: it follows the structured
-    answer format reliably, including dates in your local timezone. <strong>Bonsai
-    2B</strong> is supported and uses much less memory, but it skips the structured
-    part more often; Pocket Assistant then falls back to reading your message
-    directly, so records are still saved — you just get no written summary.</p>
+    <p>It depends on the app you installed, and Settings → Recommended model always
+    names the right one for the provider you picked.</p>
+    <ul>
+      <li><strong>Pocket LLM Chat — LFM3 1.7B</strong> is recommended: it follows the
+          structured answer format reliably, including dates in your local timezone.
+          <strong>Bonsai 2B</strong> is supported and uses much less memory, but it
+          skips the structured part more often; Pocket Assistant then falls back to
+          reading your message directly, so records are still saved — you just get no
+          written summary.</li>
+      <li><strong>Pocket LLMG — Gemma 4 E2B Instruct</strong> is the only model that app
+          offers, so there is nothing to choose.</li>
+    </ul>
   </details>
   <details>
     <summary>How should I phrase a message?</summary>
@@ -181,11 +194,62 @@
       <li>“Notes on compound interest — three bullets, tag finance”</li>
       <li>“分别给 CI/CD 和蓝绿部署各写一条 note，标签 devops”</li>
     </ul>
-    <p>Pocket LLM runs on your iPhone and has no internet access, so a note holds what the
-    model already knows — it cannot look up today's news. Ask it to flag uncertainty when
+    <p>The companion app runs on your iPhone and has no internet access, so a note holds what
+    the model already knows — it cannot look up today's news. Ask it to flag uncertainty when
     the topic is niche: “如果不确定就写明”.</p>
     <p>A paragraph that mixes a meeting, a person and an expense is harder for a
     small model and produces rougher records.</p>
+  </details>
+
+  <h2>Records</h2>
+  <details open>
+    <summary>How do I put a record aside without deleting it?</summary>
+    <p>Swipe a row from the left and tap <strong>Archive</strong>, or use the same action in
+    the record's editor. Archived records leave the list and stop reminding you, but they
+    are kept: the toolbar menu at the top left switches the whole screen to
+    <em>Archived</em>, where a swipe brings one back with <strong>Unarchive</strong>.</p>
+  </details>
+  <details>
+    <summary>I deleted something by accident</summary>
+    <p>Delete only moves a record to the <em>Deleted</em> view in the same toolbar menu.
+    Swipe it and tap <strong>Restore</strong> to bring it back. Nothing is removed for good
+    until you delete it from there (<strong>Delete forever</strong>), empty the Deleted
+    view, or erase all data.</p>
+  </details>
+  <details>
+    <summary>How do I delete everything at once?</summary>
+    <p>The toolbar menu in Records has <strong>Empty Deleted…</strong> (only the deleted
+    records) and <strong>Delete All Records…</strong> (active, archived and deleted). Both
+    show how many records they will remove and ask for confirmation. Settings → Erase all
+    data goes further and also removes the conversation and any pending request.</p>
+  </details>
+  <details>
+    <summary>Can I keep a conversation from the companion app as a record?</summary>
+    <p>Yes, from the other side: in Pocket LLM Chat or Pocket LLMG choose
+    <em>Send chat to Pocket Assistant</em> in the “…” menu. The conversation arrives in
+    Records as a note you can edit, search and delete like any other record.</p>
+  </details>
+  <details>
+    <summary>What does “Updated 1 record” mean?</summary>
+    <p>A reply that changed a record you already had — for example “change the meeting to
+    6PM” — merges into the existing row instead of creating a second one. “Saved” means new
+    records were added; “Updated” means existing ones were changed.</p>
+  </details>
+
+  <h2>Reminders and widgets</h2>
+  <details open>
+    <summary>How do I get a reminder?</summary>
+    <p>Allow notifications when the app asks (or turn them on in iOS Settings → Pocket
+    Assistant), then save a task with a due time or an event with a start time. The
+    notification arrives at that time and tapping it opens the record. Up to 60 reminders
+    are scheduled at once — soonest first; the rest are scheduled as earlier ones pass.</p>
+  </details>
+  <details>
+    <summary>How do I add a widget?</summary>
+    <p>Long-press the Home Screen, tap +, and search for Pocket Assistant. Three widgets are
+    available: <strong>Quick Ask</strong> (opens the composer), <strong>Records</strong>
+    (recent records) and <strong>Search</strong> (jumps straight to search). They read the
+    same local database and show titles and dates only.</p>
   </details>
 
   <h2>Dictation</h2>
@@ -223,7 +287,7 @@
   <details>
     <summary>Is my voice uploaded anywhere?</summary>
     <p>With Whisper: no. Audio is transcribed on the device and discarded — never stored, never
-    sent to Pocket LLM, never used for training. With Apple Speech, the audio is handled by
+    sent to the companion app, never used for training. With Apple Speech, the audio is handled by
     iOS speech recognition, which is governed by Apple's terms rather than ours.</p>
   </details>
   <details>
@@ -251,12 +315,12 @@
 
   <h2>Common questions</h2>
   <details>
-    <summary>Why does the app jump to Pocket LLM and come back?</summary>
-    <p>iOS allows only one app to be in the foreground, and the model lives in Pocket
-    LLM. Pocket Assistant writes your message to a shared folder, opens Pocket LLM,
-    waits for it to finish, and Pocket LLM hands the reply back. Pocket Assistant then
-    updates the bubble. Pocket LLM shows a short “Generating a reply…” screen during
-    that hand-off instead of its own chat history.</p>
+    <summary>Why does the app jump to another app and come back?</summary>
+    <p>iOS allows only one app to be in the foreground, and the model lives in the
+    companion app (Pocket LLM Chat or Pocket LLMG). Pocket Assistant writes your message
+    to a shared folder, opens that app, waits for it to finish, and it hands the reply
+    back. Pocket Assistant then updates the bubble. The companion app shows a short
+    “Generating a reply…” screen during that hand-off instead of its own chat history.</p>
   </details>
   <details>
     <summary>The reply says it was saved but the model wrote nothing</summary>
@@ -283,15 +347,18 @@
   </details>
   <details>
     <summary>How do I delete everything?</summary>
-    <p>Settings → Erase all data removes every record, message and pending request
-    from the device immediately. Deleting the app also removes its data.</p>
+    <p>Settings → <em>Erase all data</em> removes every record, message and pending request
+    from the device immediately. To clear records only, use the Records toolbar menu
+    (<em>Empty Deleted…</em> or <em>Delete All Records…</em>). Deleting the app also removes
+    its data.</p>
   </details>
   <details>
     <summary>Troubleshooting a request that never finishes</summary>
-    <p>If a bubble stays on “Waiting for Pocket LLM”, check in this order:</p>
+    <p>If a bubble stays on “Waiting for …”, check in this order:</p>
     <ul>
-      <li>Pocket LLM is installed and a model is loaded (not only downloaded).</li>
-      <li>Settings → Assistant provider is set to Pocket LLM Chat and “Shared
+      <li>The companion app shows as <em>Installed</em> and has a model loaded (not only
+          downloaded).</li>
+      <li>Settings → Assistant provider is set to the app you installed, and “Shared
           storage” reads Ready.</li>
       <li>Both apps were updated from the same developer account, then relaunch
           both.</li>
