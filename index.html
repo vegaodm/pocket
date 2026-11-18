@@ -83,7 +83,7 @@
   <header>
     <span class="badge">Privacy Policy</span>
     <h1>Spendly Pocket Assistant</h1>
-    <p class="sub">Effective 15 November 2026 · Updated for 1.1 (dictation, reminders, widgets, two companion apps) · Applies to the iOS app “Spendly Pocket Assistant”</p>
+    <p class="sub">Effective 18 November 2026 · Updated for 1.0 build 9 (dictation, reminders, widgets, two companion apps, conversation search) · Applies to the iOS app “Spendly Pocket Assistant”</p>
     <nav class="sub" style="margin-top:14px">
       <a href="./support.html">Support</a>
       <a href="mailto:vegaodm@outlook.com">Contact</a>
@@ -104,7 +104,12 @@
         notes, expenses, events, people and ideas, including titles, text, amounts,
         dates, tags and the record's status.</li>
     <li><strong>Conversation history</strong>: your message and the assistant's reply,
-        so the chat can be shown again after a restart.</li>
+        kept so the chat can be shown again after a restart. It is grouped into
+        conversations, the chat screen draws the most recent 50 messages, and the rest stay
+        in the database and in search.</li>
+    <li><strong>A local search index</strong> for those messages and for your records. It is
+        built and read on this iPhone, lives in the same database file, and is deleted with
+        the rows it indexes.</li>
     <li><strong>Reminders</strong>: the due times of the tasks and events the app has
         scheduled as local notifications.</li>
     <li><strong>Small settings</strong>: the selected assistant provider, the dictation
@@ -117,6 +122,15 @@
   <p>All of this lives inside the app's own container (and the shared App Group
   container described below). It is protected by iOS Data Protection and cannot be
   read while the device is locked.</p>
+
+  <h2>1.1 Answers that never leave the app</h2>
+  <p>Some questions are answered here, without calling the language model at all: counts
+  ("how many tasks do I have"), what is due today or this week, the most recent records of a
+  kind, and keyword lookups in your own notes. Those answers are computed from the local
+  database, they cost nothing, and they cannot disclose your records to anything else.</p>
+  <p>When you ask how to do something or to explain something, the answer comes from the
+  companion app and is filed as a note — <em>unconfirmed</em>, so it waits in the review
+  banner until you accept or edit it. You can delete it like any other record.</p>
 
   <h2>2. What leaves your device</h2>
   <table>
@@ -214,6 +228,11 @@
         of the list without deleting it; <strong>Delete</strong> moves it to the Deleted
         view, where you can restore it or remove it permanently with
         <em>Delete forever</em>.</li>
+    <li><strong>Conversation history</strong> is kept until you delete it. Settings → <em>Keep
+        last 200 / 500 / 1000</em> trims it automatically, and the default keeps everything.</li>
+    <li><strong>Clear chat</strong> in the chat's ••• menu deletes the conversation and its
+        search index while leaving your records untouched; <strong>Delete all data</strong>
+        removes the conversation and every record.</li>
     <li><strong>Delete All Records</strong> in the Records menu and
         <strong>Erase all data</strong> in Settings both remove records from the device
         immediately and cannot be undone.</li>

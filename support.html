@@ -199,6 +199,51 @@
     the topic is niche: “如果不确定就写明”.</p>
     <p>A paragraph that mixes a meeting, a person and an expense is harder for a
     small model and produces rougher records.</p>
+
+    <h3>When the answer asks you something back</h3>
+    <p>Small models sometimes stop and ask for a missing detail instead of filing the record —
+    "what time is the meeting?". Answer in one short message: Pocket Assistant sends the original
+    request, the question and your answer together, so you do not have to repeat yourself. The chip
+    above the message field shows what you are answering, and you can dismiss it to start a new
+    request instead. A chain stops after three rounds; if nothing has been filed by then, the reply
+    is shown as written.</p>
+
+    <h3>Asking about your own records</h3>
+    <p>Questions about what you have saved are answered by the app itself, without sending anything to
+    the language model — so they come back instantly and cannot be wrong about your data:</p>
+    <ul>
+      <li>“How many tasks do I have?”, “我有几个笔记” — a count, with a breakdown by type.</li>
+      <li>“What is due today?”, “本周有什么安排” — up to five items in time order.</li>
+      <li>“Show my recent expenses” — the newest five, listed (expenses are never added up).</li>
+      <li>“Search for dentist”, “关于复利” — title, text and tag matches.</li>
+    </ul>
+    <p>These answers appear in the chat marked <em>Answered from your records</em>. Asking the model to
+    <em>compare</em> or <em>summarise</em> what you saved is different: use Search → <em>Ask about
+    these</em>, which hands the selected records over so nothing is guessed.</p>
+
+    <h3>Starting a new conversation</h3>
+    <p>The chat is grouped into conversations, and a faint divider marks where one ended. A new one
+    starts when five minutes pass between messages, when you tap <em>•••</em> → <em>Start new
+    session</em>, or when you send a different kind of request while a reply is still waiting for an
+    answer. Records are not affected: they all live in the same list and stay searchable together.</p>
+
+    <h3>Questions about facts</h3>
+    <p>Ask a knowledge question and the answer is filed as a <strong>note</strong>, with your question
+    as its title, so it is still there when the chat has scrolled away. It arrives marked
+    <em>New</em> in the review banner: read it, then confirm or edit it like any other record. The
+    round ends there; nothing is chained.</p>
+    <p><strong>You do not have to say "save it as a note".</strong> These openings are recognised as
+    knowledge requests on their own:</p>
+    <ul>
+      <li><code>how to …</code>, <code>how do I …</code>, <code>recipe</code>, <code>tutorial</code>,
+          <code>steps to …</code>, <code>guide to …</code></li>
+      <li><code>explain …</code>, <code>what is …</code>, <code>why does …</code>,
+          <code>difference between …</code>, <code>tell me about …</code></li>
+      <li>怎么… · 如何… · 怎样… · 做法 · 教程 · 步骤 · 是什么 · 为什么 · 区别 · 解释 · 讲一下 · 攻略</li>
+    </ul>
+    <p>A short answer is enough — a two-sentence recipe counts. What is <em>not</em> filed: a reply that
+    says it cannot access your records, and a reply that only repeats the instructions. In the chat's
+    empty state, three one-tap examples show the shape of a knowledge request.</p>
   </details>
 
   <h2>Records</h2>
@@ -394,6 +439,33 @@
       <li>After 120 seconds the bubble offers <em>Check result</em> and
           <em>Retry</em>; a retry gets a fresh request.</li>
     </ul>
+  </details>
+
+  <h2>Conversation history</h2>
+  <details open>
+    <summary>Where did my older messages go?</summary>
+    <p>Nowhere — they are still there. The chat draws the most recent 50 messages so the screen
+    opens quickly, and a line at the top tells you how many older ones exist. All of them stay in
+    the local database and are findable in <em>Search</em> under “in the conversation”. Nothing is
+    removed unless you remove it.</p>
+  </details>
+  <details>
+    <summary>Can I search what I asked before?</summary>
+    <p>Yes. <em>Search</em> covers both the records you filed and the conversation itself: results
+    appear under “N in the conversation”, two lines each, with who said it and when. Tapping one
+    returns you to the chat. The index is built and read on this iPhone only.</p>
+  </details>
+  <details>
+    <summary>How do I clear the chat, or everything?</summary>
+    <p>In the chat, tap ••• :</p>
+    <ul>
+      <li><strong>Clear chat</strong> deletes the conversation and its search index. Your records
+      stay exactly as they are.</li>
+      <li><strong>Delete all data</strong> deletes the conversation and every record. It cannot be
+      undone.</li>
+    </ul>
+    <p>Settings also offers <em>Keep last 200 / 500 / 1000</em> for automatic trimming, and
+    <em>Erase all data</em>. The default keeps the whole conversation.</p>
   </details>
 
   <h2>Privacy</h2>
