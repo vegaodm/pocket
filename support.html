@@ -322,7 +322,32 @@
     companion app (Pocket LLM Chat or Pocket LLMG). Pocket Assistant writes your message
     to a shared folder, opens that app, waits for it to finish, and it hands the reply
     back. Pocket Assistant then updates the bubble. The companion app shows a short
-    “Generating a reply…” screen during that hand-off instead of its own chat history.</p>
+    screen during that hand-off instead of its own chat history: “Loading the model…”
+    while it gets the model ready, then “Generating a reply…”.</p>
+  </details>
+  <details>
+    <summary>Why does the first request take longer?</summary>
+    <p>If the companion app was closed, the hand-off has to start it and it must load the
+    model before it can answer. That takes a few seconds — roughly 5–20 s on an iPhone — and
+    Pocket Assistant waits for it instead of failing. You will see “Loading the model…” on
+    the progress screen, then the reply arrives on its own. The next request is fast
+    because the model is already in memory.</p>
+    <p>Nothing needs to be opened first. If it still has not answered after about two
+    minutes, the bubble offers <em>Check result</em> and <em>Retry</em>.</p>
+  </details>
+  <details>
+    <summary>It says the companion app is busy</summary>
+    <p>“Busy” covers two situations: the companion app is still loading its model, or it
+    is answering another request at that moment. Both clear up on their own within
+    seconds, so tap <em>Retry</em> — it sends a fresh request. The line under
+    <em>Detail</em> says which of the two it was.</p>
+  </details>
+  <details>
+    <summary>It says Pocket LLM Chat (or Pocket LLMG) is not installed</summary>
+    <p>Pocket Assistant has no model of its own, so it needs one of our two companion apps
+    on the same iPhone. Install the one you prefer from the App Store, open it once and let
+    it download a model, then choose it in Settings → Assistant provider. Only one is
+    needed, and you can switch between them at any time.</p>
   </details>
   <details>
     <summary>The reply says it was saved but the model wrote nothing</summary>
@@ -358,8 +383,10 @@
     <summary>Troubleshooting a request that never finishes</summary>
     <p>If a bubble stays on “Waiting for …”, check in this order:</p>
     <ul>
-      <li>The companion app shows as <em>Installed</em> and has a model loaded (not only
-          downloaded).</li>
+      <li>Give it a moment: if the companion app had just been opened by the hand-off, it is
+          loading the model (5–20 s) and answers on its own.</li>
+      <li>The companion app shows as <em>Installed</em> and has a model downloaded and
+          loaded.</li>
       <li>Settings → Assistant provider is set to the app you installed, and “Shared
           storage” reads Ready.</li>
       <li>Both apps were updated from the same developer account, then relaunch
